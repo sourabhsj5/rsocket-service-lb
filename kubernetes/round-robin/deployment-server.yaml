@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: rsocket-server
+  labels:
+    app: rsocket-server
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: rsocket-server
+  template:
+    metadata:
+      labels:
+        app: rsocket-server
+    spec:
+      containers:
+        - name: rsocket-server
+          image: sourabhsj5/rsocket-server-svc:1.0.4

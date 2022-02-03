@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: rsocket-client
+  labels:
+    app: rsocket-client
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: rsocket-client
+  template:
+    metadata:
+      labels:
+        app: rsocket-client
+    spec:
+      containers:
+        - name: rsocket-client
+          image: com.amdocs.digitalone/rsocket-lb-client:1.0.0
+          env:
+            - name: SERVER_HOST
+              value: rsocket-server-service:80

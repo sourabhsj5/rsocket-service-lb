@@ -1,0 +1,2 @@
+dev.techdozo.product.api.ProductServiceClient,
+dev.techdozo.grpc.client.config.AppConfig
